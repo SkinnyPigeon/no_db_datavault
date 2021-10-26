@@ -145,10 +145,8 @@ def get_patient_data(body):
                                                         id_class, 
                                                         body['serums_id'], key_name)
         data = select_patient_data(connection, tags, patient_id, key_name)
-        print(data)
         connection['engine'].dispose()
         if len(data) > 0:
             results[hospital_id.upper()]['data'] = data
         results[hospital_id.upper()]['tags'] = tags
-    print(results)
     return results

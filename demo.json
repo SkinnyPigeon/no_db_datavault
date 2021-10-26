@@ -1,0 +1,233 @@
+{
+    "ZMC": {
+        "data": {
+            "zmc.complaints_and_diagnosis": [
+                {
+                    "patnr": 1075835,
+                    "complaints_and_diagnosis": "Debilitating pain",
+                    "status": "Current",
+                    "specialism": "Orthopedics",
+                    "type": "diagnosis",
+                    "name_of_diagnosis_or_complaint": "coxartrose",
+                    "anatomical_location": "right hip",
+                    "laterality": "no",
+                    "begin_date": "01/09/2021",
+                    "end_date": "27/11/2021"
+                }
+            ],
+            "zmc.bloodpressure": [
+                {
+                    "patnr": 1075835,
+                    "value": "120/80 mmHg",
+                    "position": "seated",
+                    "description": null,
+                    "date": "01/09/2021",
+                    "systolic_bloodpressure": 120,
+                    "diastolic_bloodpressure": 80,
+                    "measurement_method": "Non-invasive",
+                    "manchette_type": null,
+                    "measurement_location": "Right upperarm"
+                }
+            ],
+            "zmc.weight": [
+                {
+                    "patnr": 1075835,
+                    "measurement": "90kg",
+                    "clothes": null,
+                    "description": null,
+                    "date": "01/09/2021"
+                }
+            ],
+            "zmc.length": [
+                {
+                    "patnr": 1075835,
+                    "measurement": "195cm",
+                    "description": null,
+                    "date": "01/09/2021"
+                }
+            ],
+            "zmc.registered_events": [
+                {
+                    "patnr": 1075835,
+                    "type": "consultation",
+                    "method": null,
+                    "anatomical_location": null,
+                    "laterality": null,
+                    "start_date": null,
+                    "end_date": null,
+                    "indication": null,
+                    "requested_by": null,
+                    "date": "01/09/2021"
+                },
+                {
+                    "patnr": 1075835,
+                    "type": "operation",
+                    "method": null,
+                    "anatomical_location": "Right hip",
+                    "laterality": null,
+                    "start_date": null,
+                    "end_date": null,
+                    "indication": null,
+                    "requested_by": null,
+                    "date": "01/09/2021"
+                },
+                {
+                    "patnr": 1075835,
+                    "type": "control appointments",
+                    "method": null,
+                    "anatomical_location": null,
+                    "laterality": null,
+                    "start_date": null,
+                    "end_date": null,
+                    "indication": null,
+                    "requested_by": null,
+                    "date": "01/09/2021"
+                }
+            ],
+            "zmc.functional_or_mental_state": [
+                {
+                    "patnr": 1075835,
+                    "name": "Finding related to hearing",
+                    "value": "Hearing problems",
+                    "date": "01/09/2021"
+                }
+            ],
+            "zmc.patient_details": [
+                {
+                    "patnr": 1075835,
+                    "nname": "Peter",
+                    "nnams": "Tester",
+                    "vname": "P.J.",
+                    "titel": "Dhr",
+                    "gschl": "male",
+                    "gbdat":"01/09/2021",
+                    "natio": "NL"
+                }
+            ]
+        },
+        "tags": [
+            {
+                "tag": "diagnostic",
+                "source": "zmc.complaints_and_diagnosis",
+                "fields": [
+                    "patnr",
+                    "complaints_and_diagnosis",
+                    "status",
+                    "specialism",
+                    "type",
+                    "name_of_diagnosis_or_complaint",
+                    "anatomical_location",
+                    "laterality",
+                    "begin_date",
+                    "end_date"
+                ],
+                "key_lookup": {},
+                "table": true,
+                "graph": false,
+                "image": false
+            },
+            {
+                "tag": "diagnostic",
+                "source": "zmc.bloodpressure",
+                "fields": [
+                    "patnr",
+                    "value",
+                    "position",
+                    "description",
+                    "date",
+                    "systolic_bloodpressure",
+                    "diastolic_bloodpressure",
+                    "measurement_method",
+                    "manchette_type",
+                    "measurement_location",
+                    "description"
+                ],
+                "key_lookup": {},
+                "table": true,
+                "graph": false,
+                "image": false
+            },
+            {
+                "tag": "diagnostic",
+                "source": "zmc.weight",
+                "fields": [
+                    "patnr",
+                    "measurement",
+                    "clothes",
+                    "description",
+                    "date"
+                ],
+                "key_lookup": {},
+                "table": true,
+                "graph": false,
+                "image": false
+            },
+            {
+                "tag": "diagnostic",
+                "source": "zmc.length",
+                "fields": [
+                    "patnr",
+                    "measurement",
+                    "description",
+                    "date"
+                ],
+                "key_lookup": {},
+                "table": true,
+                "graph": false,
+                "image": false
+            },
+            {
+                "tag": "diagnostic",
+                "source": "zmc.registered_events",
+                "fields": [
+                    "patnr",
+                    "type",
+                    "method",
+                    "anatomical_location",
+                    "laterality",
+                    "start_date",
+                    "end_date",
+                    "indication",
+                    "requested_by",
+                    "date"
+                ],
+                "key_lookup": {},
+                "table": true,
+                "graph": false,
+                "image": false
+            },
+            {
+                "tag": "diagnostic",
+                "source": "zmc.functional_or_mental_state",
+                "fields": [
+                    "patnr",
+                    "name",
+                    "value",
+                    "date"
+                ],
+                "key_lookup": {},
+                "table": true,
+                "graph": false,
+                "image": false
+            },
+            {
+                "tag": "diagnostic",
+                "source": "zmc.patient_details",
+                "fields": [
+                    "patnr",
+                    "nname",
+                    "nnams",
+                    "vname",
+                    "titel",
+                    "gschl",
+                    "gbdat",
+                    "natio"
+                ],
+                "key_lookup": {},
+                "table": true,
+                "graph": false,
+                "image": false
+            }
+        ]
+    }
+}
