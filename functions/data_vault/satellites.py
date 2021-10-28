@@ -15,29 +15,17 @@ def process_satellites(data):
     for hospital in data:
         results[hospital] = {}
         satellite_definitions = hospital_picker(hospital)
-        # print(satellite_definitions)
         for table_name in data[hospital]['data']:
             source_data = data[hospital]['data'][table_name]
-            # for row in results:
-            #     print(row)
-            # print(table_name)
-            # print(results)
-            # print(satellite_definitions[table_name])
-            # print('\n')
             results[hospital][table_name] = {}
             results[hospital][table_name]['links'] = satellite_definitions[table_name]['links']
             for satellite_name in satellite_definitions[table_name]:
                 if satellite_name != 'links':
                     columns = satellite_definitions[table_name][satellite_name]['columns']
                     results
-                    # print(columns)
-                    # results[hospital][satellite_name]
                     results[hospital][table_name][satellite_name] = {}
                     results[hospital][table_name][satellite_name]['hub'] = satellite_definitions[table_name][satellite_name]['hub']
                     results[hospital][table_name][satellite_name]['data'] = [{k: row[k] for k in row if k in columns} for row in source_data]
-                # if satellite_name == 'links':
-                    # results[hospital][satellite_name]['links'] = satellite_definitions[table_name]['links']
-    # print(results)
     return results
 
             

@@ -33,17 +33,17 @@ def create_data_vault(satellites):
     boilerplate = generate_boilerplate()
     results = {}
     for hospital in sats:
+        results = {}
+        results['satellites'] = {}
+        results['hubs'] = {}
+        results['links'] = {}
         for table in sats[hospital]:
             satellite_definitions = sats[hospital][table]
             links = sats[hospital][table]['links']
-            print(links)
             for satellite_name in satellite_definitions:
                 if satellite_name != 'links':
-                    print(satellite_name)
-                    print(satellite_definitions[satellite_name])
                     hub = satellite_definitions[satellite_name]['hub']
                     hub_class = hub.split('_')[1] + '_id'
-                    print(hub_class)
                     for row in satellite_definitions[satellite_name]['data']:
                         next_hub_val = len(boilerplate['hubs'][hub]) + 1
                         boilerplate['hubs'][hub].append(next_hub_val)
@@ -51,6 +51,7 @@ def create_data_vault(satellites):
                         for link in links:
                             if hub_class in boilerplate['links'][link]:
                                 boilerplate['links'][link][hub_class].append(next_hub_val)
-                        print(row)
-            print('\n')
-    print(boilerplate)
+                    results['satellites'][f'{hospital.lower()}_{satellite_name}'] = satellite_definitions[satellite_name]['data']
+    results['hubs'] = boilerplate['hubs']
+    results['links'] = boilerplate['links']
+    return results
