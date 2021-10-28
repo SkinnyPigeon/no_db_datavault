@@ -1,0 +1,135 @@
+{
+    "ZMC": {
+        "sat_time_complaints_and_diagnosis": [
+            {
+                "begin_date": "today",
+                "end_date": "today"
+            }
+        ],
+        "sat_event_complaints_and_diagnosis": [
+            {
+                "complaints_and_diagnosis": "Debilitating pain",
+                "status": "Current",
+                "specialism": "Orthopedics",
+                "type": "diagnosis",
+                "name_of_diagnosis_or_complaint": "coxartrose",
+                "anatomical_location": "right hip",
+                "laterality": "no"
+            }
+        ],
+        "sat_time_bloodpressure_details": [
+            {
+                "date": "today"
+            }
+        ],
+        "sat_location_bloodpressure_details": [
+            {
+                "position": "seated"
+            }
+        ],
+        "sat_event_bloodpressure_details": [
+            {
+                "value": "120/80 mmHg",
+                "description": null,
+                "systolic_bloodpressure": 120,
+                "diastolic_bloodpressure": 80,
+                "measurement_method": "Non-invasive",
+                "manchette_type": null,
+                "measurement_location": "Right upperarm"
+            }
+        ],
+        "sat_time_weight_details": [
+            {
+                "date": "today"
+            }
+        ],
+        "sat_event_weight_details": [
+            {
+                "measurement": "90kg",
+                "clothes": null,
+                "description": null
+            }
+        ],
+        "sat_time_length_details": [
+            {
+                "date": "today"
+            }
+        ],
+        "sat_event_length_details": [
+            {
+                "measurement": "195cm",
+                "description": null
+            }
+        ],
+        "sat_time_registered_events": [
+            {
+                "start_date": null,
+                "end_date": null,
+                "date": "today"
+            },
+            {
+                "start_date": null,
+                "end_date": null,
+                "date": "today"
+            },
+            {
+                "start_date": null,
+                "end_date": null,
+                "date": "today"
+            }
+        ],
+        "sat_location_registered_events": [
+            {},
+            {},
+            {}
+        ],
+        "sat_event_registered_events": [
+            {
+                "type": "consultation",
+                "method": null,
+                "anatomical_location": null,
+                "laterality": null,
+                "indication": null,
+                "requested_by": null
+            },
+            {
+                "type": "operation",
+                "method": null,
+                "anatomical_location": "Right hip",
+                "laterality": null,
+                "indication": null,
+                "requested_by": null
+            },
+            {
+                "type": "control appointments",
+                "method": null,
+                "anatomical_location": null,
+                "laterality": null,
+                "indication": null,
+                "requested_by": null
+            }
+        ],
+        "sat_time_functional_or_mental_state": [
+            {
+                "date": "today"
+            }
+        ],
+        "sat_event_functional_or_mental_state": [
+            {
+                "name": "Finding related to hearing",
+                "value": "Hearing problems"
+            }
+        ],
+        "sat_person_patient_details": [
+            {
+                "nname": "Peter",
+                "nnams": "Tester",
+                "vname": "P.J.",
+                "titel": "Dhr",
+                "gschl": "male",
+                "gbdat": "today",
+                "natio": "NL"
+            }
+        ]
+    }
+}
