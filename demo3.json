@@ -1,0 +1,114 @@
+{
+    "hubs": {
+        "hub_time": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ],
+        "hub_person": [
+            1
+        ],
+        "hub_object": [],
+        "hub_location": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "hub_event": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    "links": {
+        "time_person_link": {
+            "time_id": [],
+            "person_id": []
+        },
+        "time_object_link": {
+            "time_id": [],
+            "object_id": []
+        },
+        "time_location_link": {
+            "time_id": [
+                2,
+                5,
+                6,
+                7
+            ],
+            "location_id": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        "time_event_link": {
+            "time_id": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ],
+            "event_id": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ]
+        },
+        "person_object_link": {
+            "person_id": [],
+            "object_id": []
+        },
+        "person_location_link": {
+            "person_id": [],
+            "location_id": []
+        },
+        "person_event_link": {
+            "person_id": [],
+            "event_id": []
+        },
+        "object_location_link": {
+            "object_id": [],
+            "location_id": []
+        },
+        "object_event_link": {
+            "object_id": [],
+            "event_id": []
+        },
+        "location_event_link": {
+            "location_id": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "event_id": [
+                2,
+                5,
+                6,
+                7
+            ]
+        }
+    }
+}

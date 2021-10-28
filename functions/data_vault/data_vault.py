@@ -51,6 +51,6 @@ def create_data_vault(satellites):
                         for link in links:
                             if hub_class in boilerplate['links'][link]:
                                 boilerplate['links'][link][hub_class].append(next_hub_val)
-                            print(row)
+                        print(row)
             print('\n')
     print(boilerplate)
