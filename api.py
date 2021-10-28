@@ -3,6 +3,8 @@ from functions.get_source_data import get_patient_data
 from functions.data_vault.satellites import process_satellites
 from functions.data_vault.data_vault import create_data_vault
 from functions.data_vault.hub_post_processing import hub_equalizer
+from functions.data_vault.link_post_processing import add_id_values
+
 body = {
   "serums_id": 364,
   "rule_id": "RULE_0df8eb8b-a469-46ae-8119-fbf98fa05b92",
@@ -22,12 +24,8 @@ satellites = process_satellites(data)
 data_vault = create_data_vault(satellites)
 print(data_vault['satellites'])
 print('\n')
+add_id_values(data_vault['links'])
 print(data_vault['links'])
 print('\n')
 hub_equalizer(data_vault['hubs'])
 print(data_vault['hubs'])
-
-import pandas as pd
-df = pd.DataFrame(data_vault['hubs']['hub_event'])
-print(df)
-df.to_csv('./check2.csv')

@@ -15,16 +15,16 @@ def generate_boilerplate():
 
 def get_id_columns(link):
     id_columns = {
-        'time_person_link': {'time_id': [], 'person_id': []}, 
-        'time_object_link': {'time_id': [], 'object_id': []}, 
-        'time_location_link': {'time_id': [], 'location_id': []}, 
-        'time_event_link': {'time_id': [], 'event_id': []},
-        'person_object_link': {'person_id': [], 'object_id': []}, 
-        'person_location_link': {'person_id': [], 'location_id': []}, 
-        'person_event_link': {'person_id': [], 'event_id': []},
-        'object_location_link': {'object_id': [], 'location_id': []}, 
-        'object_event_link': {'object_id': [], 'event_id': []},
-        'location_event_link': {'location_id': [], 'event_id': []}
+        'time_person_link': {'id': [], 'time_id': [], 'person_id': []}, 
+        'time_object_link': {'id': [], 'time_id': [], 'object_id': []}, 
+        'time_location_link': {'id': [], 'time_id': [], 'location_id': []}, 
+        'time_event_link': {'id': [], 'time_id': [], 'event_id': []},
+        'person_object_link': {'id': [], 'person_id': [], 'object_id': []}, 
+        'person_location_link': {'id': [], 'person_id': [], 'location_id': []}, 
+        'person_event_link': {'id': [], 'person_id': [], 'event_id': []},
+        'object_location_link': {'id': [], 'object_id': [], 'location_id': []}, 
+        'object_event_link': {'id': [], 'object_id': [], 'event_id': []},
+        'location_event_link': {'id': [], 'location_id': [], 'event_id': []}
     }
     return id_columns[link]
 
