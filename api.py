@@ -18,5 +18,30 @@ body = {
 
 data = get_patient_data(body)
 satellites = process_satellites(data)
+# print(satellites)
+# print('\n')
 data_vault = create_data_vault(satellites)
-print(data_vault)
+# print(data_vault)
+print(data_vault['satellites'])
+print('\n')
+print(data_vault['links'])
+print('\n')
+print(data_vault['hubs'])
+print('\n')
+
+d = data_vault['hubs']['hub_time']
+max_key = max(d, key= lambda x: len(set(d[x])))
+print(max_key)
+print(len(d[max_key]))
+for key in d:
+  while len(d[key]) < len(d[max_key]):
+    d[key].append(None)
+
+for key in d:
+  print(key)
+  print(len(d[key]))
+import pandas as pd
+
+df = pd.DataFrame(d)
+print(df)
+df.to_csv('./check.csv')
