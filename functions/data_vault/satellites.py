@@ -24,13 +24,17 @@ def process_satellites(data):
             # print(results)
             # print(satellite_definitions[table_name])
             # print('\n')
+            results[hospital][table_name] = {}
+            results[hospital][table_name]['links'] = satellite_definitions[table_name]['links']
             for satellite_name in satellite_definitions[table_name]:
                 if satellite_name != 'links':
                     columns = satellite_definitions[table_name][satellite_name]['columns']
-                    
                     # print(columns)
                     # results[hospital][satellite_name]
-                    results[hospital][satellite_name] = [{k: row[k] for k in row if k in columns} for row in source_data]
+                    results[hospital][table_name][satellite_name] = [{k: row[k] for k in row if k in columns} for row in source_data]
+                # if satellite_name == 'links':
+                    # results[hospital][satellite_name]['links'] = satellite_definitions[table_name]['links']
     print(results)
+    return results
 
             
