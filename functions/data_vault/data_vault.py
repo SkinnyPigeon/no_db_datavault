@@ -10,21 +10,21 @@ def generate_boilerplate():
     ]
     boilerplate = {}
     boilerplate['hubs'] = {hub: [] for hub in hubs}
-    boilerplate['links'] = {link: [] for link in links}
+    boilerplate['links'] = {link: get_id_columns(link) for link in links}
     return boilerplate
 
 def get_id_columns(link):
     id_columns = {
-        'time_person_link': ['time_id', 'person_id'], 
-        'time_object_link': ['time_id', 'object_id'], 
-        'time_location_link': ['time_id', 'location_id'], 
-        'time_event_link': ['time_id', 'event_id'],
-        'person_object_link': ['person_id', 'object_id'], 
-        'person_location_link': ['person_id', 'location_id'], 
-        'person_event_link': ['person_id', 'event_id'],
-        'object_location_link': ['object_id', 'location_id'], 
-        'object_event_link': ['object_id', 'event_id'],
-        'location_event_link': ['location_id', 'event_id']
+        'time_person_link': {'time_id': [], 'person_id': []}, 
+        'time_object_link': {'time_id': [], 'object_id': []}, 
+        'time_location_link': {'time_id': [], 'location_id': []}, 
+        'time_event_link': {'time_id': [], 'event_id': []},
+        'person_object_link': {'person_id': [], 'object_id': []}, 
+        'person_location_link': {'person_id': [], 'location_id': []}, 
+        'person_event_link': {'person_id': [], 'event_id': []},
+        'object_location_link': {'object_id': [], 'location_id': []}, 
+        'object_event_link': {'object_id': [], 'event_id': []},
+        'location_event_link': {'location_id': [], 'event_id': []}
     }
     return id_columns[link]
 
@@ -42,10 +42,15 @@ def create_data_vault(satellites):
                     print(satellite_name)
                     print(satellite_definitions[satellite_name])
                     hub = satellite_definitions[satellite_name]['hub']
+                    hub_class = hub.split('_')[1] + '_id'
+                    print(hub_class)
                     for row in satellite_definitions[satellite_name]['data']:
                         next_hub_val = len(boilerplate['hubs'][hub]) + 1
                         boilerplate['hubs'][hub].append(next_hub_val)
                         row.update({f'{hub}_id': next_hub_val})
-                        print(row)
+                        for link in links:
+                            if hub_class in boilerplate['links'][link]:
+                                boilerplate['links'][link][hub_class].append(next_hub_val)
+                            print(row)
             print('\n')
     print(boilerplate)
