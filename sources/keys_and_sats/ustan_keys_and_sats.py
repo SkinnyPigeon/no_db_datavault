@@ -17,14 +17,14 @@ ustan_sats = {
             "hub": "hub_time"
         },
         "sat_person_general_patient": {
-            # "columns": ["name", "date_of_birth", "dob", "age", "gender", "age_at_diagnosis", "weight", "bmi", "height", "religion", "civil_st", "postcode_pre", "postcode_suf", "postcode"],
-            "columns": ["name", "date_of_birth", "dob", "age", "gender", "age_at_diagnosis", "weight", "bmi", "height", "religion", "civil_st", "postcode_pre", "postcode_suf", "postcode", "gp_name", "gp_id"],
+            "columns": ["name", "date_of_birth", "dob", "age", "gender", "age_at_diagnosis", "weight", "bmi", "height", "religion", "civil_st", "postcode_pre", "postcode_suf", "postcode"],
+            # "columns": ["name", "date_of_birth", "dob", "age", "gender", "age_at_diagnosis", "weight", "bmi", "height", "religion", "civil_st", "postcode_pre", "postcode_suf", "postcode", "gp_name", "gp_id"],
             "hub": "hub_person"
         },
-        # "sat_person_general_gp": {
-        #     "columns": ["gp_name", "gp_id"],
-        #     "hub": "hub_person"
-        # },
+        "sat_person_general_gp": {
+            "columns": ["gp_name", "gp_id"],
+            "hub": "hub_person"
+        },
         "sat_location_general_details": {
             "columns": ["ref_hospital"],
             "hub": "hub_location"

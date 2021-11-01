@@ -20,6 +20,8 @@ body = {
 }
 
 data = get_patient_data(body)
+print(data['USTAN']['data']['ustan.general'])
+print('\n')
 satellites = process_satellites(data)
 data_vault = create_data_vault(satellites)
 print(data_vault['satellites'])
