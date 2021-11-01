@@ -28,6 +28,45 @@ def get_id_columns(link):
     }
     return id_columns[link]
 
+# def create_data_vault(satellites):
+#     sats = copy.deepcopy(satellites)
+#     boilerplate = generate_boilerplate()
+#     results = {}
+#     for hospital in sats:
+#         results = {}
+#         results['satellites'] = {}
+#         results['hubs'] = {}
+#         results['links'] = {}
+#         for table in sats[hospital]:
+#             satellite_definitions = sats[hospital][table]
+#             links = sats[hospital][table]['links']
+#             for satellite_name in satellite_definitions:
+#                 if satellite_name != 'links':
+#                     hub = satellite_definitions[satellite_name]['hub']
+#                     keys = satellite_definitions[satellite_name]['keys']
+#                     hub_class = hub.split('_')[1] + '_id'
+#                     for i, row in enumerate(satellite_definitions[satellite_name]['data']):
+#                         next_hub_val = len(boilerplate['hubs'][hub]['id']) + 1
+#                         for key in keys[i]:
+#                             try:
+#                                 while len(boilerplate['hubs'][hub][key]) < len(boilerplate['hubs'][hub]['id']):
+#                                     boilerplate['hubs'][hub][key].append(None)
+#                                 boilerplate['hubs'][hub][key].append(keys[i][key])
+#                             except:
+#                                 boilerplate['hubs'][hub][key] = []
+#                                 while len(boilerplate['hubs'][hub][key]) < len(boilerplate['hubs'][hub]['id']):
+#                                     boilerplate['hubs'][hub][key].append(None)
+#                                 boilerplate['hubs'][hub][key].append(keys[i][key])
+#                         row.update({f'{hub}_id': next_hub_val})
+#                         boilerplate['hubs'][hub]['id'].append(next_hub_val)
+#                         for link in links:
+#                             if hub_class in boilerplate['links'][link]:
+#                                 boilerplate['links'][link][hub_class].append(next_hub_val)
+#                     results['satellites'][f'{hospital.lower()}_{satellite_name}'] = satellite_definitions[satellite_name]['data']
+#     results['hubs'] = boilerplate['hubs']
+#     results['links'] = boilerplate['links']
+#     return results
+
 def create_data_vault(satellites):
     sats = copy.deepcopy(satellites)
     boilerplate = generate_boilerplate()
@@ -38,31 +77,32 @@ def create_data_vault(satellites):
         results['hubs'] = {}
         results['links'] = {}
         for table in sats[hospital]:
-            satellite_definitions = sats[hospital][table]
-            links = sats[hospital][table]['links']
-            for satellite_name in satellite_definitions:
-                if satellite_name != 'links':
-                    hub = satellite_definitions[satellite_name]['hub']
-                    keys = satellite_definitions[satellite_name]['keys']
-                    hub_class = hub.split('_')[1] + '_id'
-                    for i, row in enumerate(satellite_definitions[satellite_name]['data']):
-                        next_hub_val = len(boilerplate['hubs'][hub]['id']) + 1
-                        for key in keys[i]:
-                            try:
-                                while len(boilerplate['hubs'][hub][key]) < len(boilerplate['hubs'][hub]['id']):
-                                    boilerplate['hubs'][hub][key].append(None)
-                                boilerplate['hubs'][hub][key].append(keys[i][key])
-                            except:
-                                boilerplate['hubs'][hub][key] = []
-                                while len(boilerplate['hubs'][hub][key]) < len(boilerplate['hubs'][hub]['id']):
-                                    boilerplate['hubs'][hub][key].append(None)
-                                boilerplate['hubs'][hub][key].append(keys[i][key])
-                        row.update({f'{hub}_id': next_hub_val})
-                        boilerplate['hubs'][hub]['id'].append(next_hub_val)
-                        for link in links:
-                            if hub_class in boilerplate['links'][link]:
-                                boilerplate['links'][link][hub_class].append(next_hub_val)
-                    results['satellites'][f'{hospital.lower()}_{satellite_name}'] = satellite_definitions[satellite_name]['data']
+            if table == "ustan.general":
+                satellite_definitions = sats[hospital][table]
+                links = sats[hospital][table]['links']
+                for satellite_name in satellite_definitions:
+                    if satellite_name != 'links':
+                        hub = satellite_definitions[satellite_name]['hub']
+                        keys = satellite_definitions[satellite_name]['keys']
+                        hub_class = hub.split('_')[1] + '_id'
+                        for i, row in enumerate(satellite_definitions[satellite_name]['data']):
+                            next_hub_val = len(boilerplate['hubs'][hub]['id']) + 1
+                            for key in keys[i]:
+                                try:
+                                    while len(boilerplate['hubs'][hub][key]) < len(boilerplate['hubs'][hub]['id']):
+                                        boilerplate['hubs'][hub][key].append(None)
+                                    boilerplate['hubs'][hub][key].append(keys[i][key])
+                                except:
+                                    boilerplate['hubs'][hub][key] = []
+                                    while len(boilerplate['hubs'][hub][key]) < len(boilerplate['hubs'][hub]['id']):
+                                        boilerplate['hubs'][hub][key].append(None)
+                                    boilerplate['hubs'][hub][key].append(keys[i][key])
+                            row.update({f'{hub}_id': next_hub_val})
+                            boilerplate['hubs'][hub]['id'].append(next_hub_val)
+                            for link in links:
+                                if hub_class in boilerplate['links'][link]:
+                                    boilerplate['links'][link][hub_class].append(next_hub_val)
+                        results['satellites'][f'{hospital.lower()}_{satellite_name}'] = satellite_definitions[satellite_name]['data']
     results['hubs'] = boilerplate['hubs']
     results['links'] = boilerplate['links']
     return results
